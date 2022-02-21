@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="h2 text-center" style="color:orange ;">Describe <b >This Place</b></div>
+<div class="col-sm-1"></div>
+<div class="col-sm-10 bg-light p-5">
+    <div class="row">
+        {% if d%}
+        {% for x in d%}
+    <div class="col-sm-6">
+        <img src="/{{x.placepic}}"  class="img-thumbnail w-100"/>
+    </div>
+    <div class="col-sm-6">
+        <div class="h3 btn btn-outline-dark">
+            {{x.ptitle}}
+        </div>
+        <p class="fs-4"> {{x.baplace}}</p>
+        <p>{{x.pdes}}</p>
+        <i class="btn btn-dark"> {{x.city}}</i>
+        <i class="btn btn-dark">Added Date :   {{x.pdate}}</i>
+
+    </div>
+        {% endfor %}
+        {% endif%}
+    </div>
+</div>
+<div class="col-sm-1"></div>
+</div>
+{% endblock%}

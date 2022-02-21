@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .form-control
+    {
+    margin-bottom:8px;
+    }
+</style>
+<div class="row">
+    <div class="h2 text-center mt-3" style="color:blue">ContactUs <i class="fa fa-phone"></i></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 bg-light">
+        <div class="row">
+            <div class="col-sm-7 p-0 " style="background:linear-gradient(245deg,pink ,white);">
+                <img src="{% static 'images/SS1.jpg'%}" style="height:100%;width:100%;"/>
+<!--                 <h1><center style="padding-top:140px;">Expalin You</center></h1>-->
+               <!--<b>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</b></p>-->
+
+            </div>
+            <div class="col-sm-5 p-5"style="background:linear-gradient(485deg,#4fc3f7 ,black);">
+
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}   <!-- cross site reforgery -->
+                    {% if S %}
+                    <div class="alert alert-success">
+                        <i>Thanks for enquiry........</i>
+                    </div>
+                    {% endif%}
+
+                Name <input type="text" placeholder="Enter your name.." class="form-control" name="name"/>
+                Email <input type="Email" placeholder="Enter Your Email.." class="form-control" name="email"/>
+                Mobil No<input type="text" placeholder="Enter your Mobile No.." class="form-control" name="mobile"/>
+                Message <textarea class="form-control" name="msg"></textarea>
+                <input type="submit" value="save" class="btn btn-info"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+
+</div>
+<div class="row">
+    <div class="col-sm-12 p-0 pt-2">
+       <section> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471218.3855890566!2d88.0495203157258!3d22.676385759280844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1633171738280!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       </section>
+    </div>
+</div>
+
+{% endblock %}

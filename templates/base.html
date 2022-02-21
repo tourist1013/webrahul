@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradies Tour</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <style>
+    #loading
+    {
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#fff
+    url('{% static "images/NN.gif
+    "%}')
+    no-repeat center;
+    z-index:99999;
+
+    }
+        .header
+        {
+        min-height:80px;
+        text-align:center;
+        border-top:5px solid #b71c1c ;
+        }
+        .ic
+        {
+        color:red ;
+        border:1px solid #4fc3f7 ;
+        height:25px;
+        width:25px;
+        padding-top:3px;
+        }
+        .ic:hover
+        {
+        background:#4fc3f7 ;
+        color:white;
+        transition:all ease 1s;
+        transform:rotate(360deg);
+        }
+        .menu
+        {
+        min-height:45px;
+        }
+        #menu ul li a
+        {
+        color:black;
+        }
+        #menu ul li a:hover
+        {
+        color: pink;
+        transition:all ease .5s;
+        }
+     .newproduct
+     {
+     min-height:500px;
+     }
+     .services{
+     min-height:300px;
+     background:#4fc3f7 ;
+     }
+.ufooter{
+min-height:250px;
+background:gray;
+text-decoration:none;
+}
+.bfooter{
+min-height:40px;
+margin-top:1px;
+background:black;
+}
+.h{
+color:white;
+margin:5px;
+font-size:30px;
+text-align:center;
+}
+.content
+{
+min-height:400px;
+}
+body{
+	background-color: rgb(135, 250, 173);
+}
+.circle{
+	margin: 70px auto;
+	width: 40px;
+	height: 40px;
+	border: 5px solid rgba(255,255,255,0.2);
+	border-radius: 50%;
+	border-top-color:black;
+	animation: spin 1s linear infinite;
+}
+@Keyframes spin{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.container{
+	width: 40px;
+	margin: 70px auto;
+}
+
+
+    </style>
+</head>
+<body onload="myFunction()">
+
+<div id="loading"></div>
+
+<div class="container-fluid outer">
+    <div class="row bg-dark" style="min-height:30px;">
+  <div class="col-sm-7" style="background-color:white;"><span style="font-size:12px; word-spacing:10px;">
+     <i class="fa fa-envelope-o"></i>   Email : <a>rahuls1013@gmail.com</a></span></div>
+  <div class="col-sm-5 " style="background-color:white;"><span style="font-size:12px;word-spacing:10px;">
+   <i class="fa fa-volume-control-phone"></i>  Helpline No : <a>+91 9670441013</a> | <a>+91 7235007288</a> </span> </div>
+</div>
+    <div class="row header bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3 fs-2 py-2">
+                    <b style="color:#4fc3f7 ;">Paradies</b> Tour <i class="fa fa-plane"></i>
+                </div>
+                <div class="col-sm-6 fs-5 pt-4">Journey Of Life</div>
+                <div class="col-sm-3 py-4">
+                    <i class="fa fa-facebook ic"></i>
+                    <i class="fa fa-twitter ic"></i>
+                    <i class="fa fa-youtube ic"></i>
+                    <i class="fa fa-whatsapp ic"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row menu   bg-info sticky-top">
+<!-- start menu -->
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="padding-left:10%;">
+                    <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/home/"><i class="fa fa-home">  Home</i></a>
+        </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="/user/about/"><i class="fa fa-info-circle">  About Us</i></a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/newplace/"><i class="fa fa-map-marker">  NewPlaces</i></a>
+        </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="/user/guiderdetails"><i class="fa fa-vcard-o">  Guider </i></a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/gallery"><i class="fa fa-image">  Gallery</i></a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/user/contactus"><i class="fa fa-phone">   Contactus</i></a>
+        </li>
+
+           <li class="nav-item">
+          <a class="nav-link" href="/admin/"><i class="fa fa-sign-in">  Login </i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+        <!-- end menu -->
+    </div>
+
+
+    <div class="row content" style="min-height:500px;">
+        <div class="col-sm-12">
+        {% block content%}
+        {% endblock %}
+         </div>
+    </div>
+
+
+    <!-- end papular place-->
+            <div class="row ufooter">
+                 <!-- Footer -->
+<footer class="text-center text-lg-start  text-muted text-light text-secondary">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block text-light">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div style="color:white">
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="" style="background-color:white; height:300px; text-light">
+    <div class="container text-center text-md-start">
+      <!-- Grid row -->
+      <div class="row mt-10 mb-5 " style="color:black;">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto pt-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-15">
+            <i class="fa fa-gem me-3 pt-9"></i>About Company
+          </h6>
+          <p>
+         TourGuide Solutions Announces Reseller Partner Agreement with RealWear; Hands-free, Mobile Computing Wearable Device Ideal for Remote Communications
+June 24, 2020
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto me-4">
+          <!-- Links -->
+          <h6 class="text-uppercasecase fw-bold pt-4">
+            SERVICE
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">FIND A TOUR</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">FIND A GUOIDER</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset"> COVID-19 RESPONSE</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold pt-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset"></a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">ABOUT</a>
+          </p>
+            <p>
+            <a href="#!" class="text-reset">CONTACT US</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">PRIVACY POLICY</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">TERAM & CONDITION</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold pt-4">
+            Contact
+          </h6>
+          <p><i class="fa fa-home me-3"></i><a href="https://www.google.com/maps/dir/Fursatganj,+Uttar+Pradesh/Raeb
+          areli/@26.1853888,81.4775563,16z/data=!4m13!4m12!1m5!1m1!1s0x399
+          ba9335721cf89:0x87a44bfdc188477b!2m2!1d81.3
+          784351!2d26.2487272!1m5!1m1!1s0x399ba14166f655d1:0x24dffd072d37
+          7f70!2m2!1d81.2528139!2d26.2144806"> Civil Lines, Raebareli, INDIA</a></p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+           <a href="https://mail.google.com/mail/u/0/#inbox"> strahul526@gmail.com</a>
+          </p>
+          <p><i class="fa fa-phone me-3"></i> + 91 7235007288</p>
+          <p><i class="fa fa-print me-3"></i> + 91 9670441013</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: black; text-light">
+    © 2021 Copyright: ||              <span>                       Devoloped By: Profestional Rahul Sharma </span>
+    <a class="text-reset fw-bold" href=""></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+
+</div>
+
+<</div>
+<
+<<script>
+    var preloader = document.getElementById('loading');
+    function myFunction(){
+    preloader.style.display = 'none';
+    }
+<</script>
+<div class="circle"></div>
+		<div class="circle"></div>
+</body>
+</html>

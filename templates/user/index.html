@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Start slider-->
+<div class="row slider">
+        <div class="col-sm-12 p-0" style="transition:all ease 1s;">
+
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/A1.jpg' %}" class="d-block w-100"style="max-height:650px;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Mountain</h5>
+        <p> A mountain is an elevated portion of the Earth's crust, generally with steep sides that show significant exposed bedrock.
+            A mountain differs from a plateau in having a limited summit area, and is larger than a hill,
+            typically rising at least 300 metres (1000 feet) above the surrounding land.
+            A few mountains are isolated summits, but most occur in mountain ranges</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/A2.jpg' %}" class="d-block w-100"style="max-height:650px;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Colofull Mountain</h5>
+        <p> A mountain is an elevated portion of the Earth's crust, generally with steep sides that show significant exposed bedrock.
+            A mountain differs from a plateau in having a limited summit area, and is larger than a hill,
+            typically rising at least 300 metres (1000 feet) above the surrounding land.
+            A few mountains are isolated summits, but most occur in mountain ranges</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/A3.jpg' %}" class="d-block w-100"style="max-height:650px;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Bell House</h5>
+        <p>
+
+            Welcome to the Bell House. We are open for lunch and dinner .
+            Tuesday through Saturday CarryOut/Curb Side and Delivery Also Available.
+            Call 502-437-5678. See Hours Page for Details . W
+        </p>
+      </div>
+    </div>
+       <div class="carousel-item">
+      <img src="{% static 'images/pink.jpg' %}" class="d-block w-100"style="max-height:650px;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>PINK CITY</h5>
+        <p>
+
+            Welcome to the Pink City. We are open for lunch and dinner .
+            Tuesday through Saturday CarryOut/Curb Side and Delivery Also Available.
+            Call 502-437-5678. See Hours Page for Details . W
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        </div>
+    </div>
+<!-- end slider-->
+<!-- city -->
+<!-- end city -->
+<div class="row">
+    <div class="h3 text-center"style="padding-top:10px;padding-bottom:5px; color:#4fc3f7 ;"><u>Categories Of<b style="color: black ;padding-top:5px;"> City</u></b><i class="fa fa-globe"></i></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+        {% if city %}
+        {% for x in city %}
+        <div class="col-sm-2">
+            <div class="card">
+  <img class="card-img-top" src="/{{x.cpic}}" class="img-thumbnail" alt="Card image cap">
+  <div class="card-body">
+
+    <a href="/user/newplace?abc={{x.id}}" class="btn btn-outline-success w-100">{{x.cname}}</a>
+  </div>
+</div>
+        </div>
+        {% endfor%}
+        {% endif %}
+            </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+<!-- start top places-->
+<div class="row newproduct  py-3">
+    <div class="h4 text-center">New <b class="text-success"> Places <i class="fa fa-map-marker"></i></b></div>
+    <div class="col-sm-12">
+        <div class="row">
+            {% if place %}
+            {% for x in place %}
+            <div class="col-sm-3">
+                <div class="card w-100">
+  <img src="/{{x.placepic}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title h3">{{x.ptitle}}</h4>
+      <p class="card-text fs-5">{{x.baplace}}</p>
+      <span style="font-size:16px;"> <i class="fa fa-map-marker"></i> {{x.city}} ||   {{x.pdate}}</span>
+     <br/><br/> <a href="/user/viewdetails?msg={{x.id}}" class="btn btn-outline-success">View More</a>
+  </div>
+</div>
+            </div>
+            {% endfor%}
+            {% endif%}
+
+        </div>
+    </div>
+    </div>
+<!-- end -->
+
+<!-- START  papular place-->
+
+<!-- end-->
+<div class="row">
+
+
+<!-------start--------->
+<div class="row">
+    <div class="h2 text-center text-dark"><u>Latest<b class="text-info"> Destination</u></b></div>
+    <div class="col-sm-3">
+        <img src="{% static 'gallery/rumi.jpg' %}" style="height:190px; width:100%;"/>
+    </div>
+
+    <div class="col-sm-9">
+        <h4><u>Rumi DarwaZa :</u></h4>
+       <p style="text-align:justify;">The Rumi Darwaza (Hindi: रूमी दरवाज़ा, Urdu: رومی دروازه, and sometimes known as the Turkish Gate), in Lucknow, Uttar Pradesh, India, is an imposing gateway which was built by Nawab Asaf-Ud-Daula in 1784.[1] It is an example of Awadhi architecture.[1] The Rumi Darwaza, which stands sixty feet tall,[2] was modeled (1784) after the Sublime Porte (Bab-iHümayun) in Istanbul.[3]
+
+It is adjacent to the Asafi Imambara, Teele Wali Masjid in Lucknow and has become a logo for the city of Lucknow. It used to mark the entrance to Old Lucknow City, but as the City of Nawabs grew and expanded, it was later used as an entrance to a palace which was later demolished by the British insurgents.</p><br/>
+        </div>
+</div>
+<div class="row">
+    <div  class="col-sm-9">
+        <h4>Varanasi(Ganga Ghat) :</h4>
+        <p style="text-align:justify;"> Ghats in Varanasi are riverfront steps leading to the banks of the River Ganges.
+            The city has 88 ghats. Most of the ghats are bathing and puja ceremony ghats, while two ghats,
+            Manikarnika and Harishchandra, are used exclusively as cremation sites.
+
+Most Varanasi ghats were rebuilt in the 18th century under the maratha patronage.
+            The patrons of current ghats are Marathas, Shindes (Scindias), Holkars, Bhonsles, and Peshwes (Peshwas).
+            Maharajas of Benares. Many ghats are associated with legends or mythologies while many ghats are privately
+            owned. Morning boat ride on the Ganges across the ghats is a popular visitor attraction.</p>
+        <p>The word ghat is explained by numerous Dravidian etymons such as Kannada gatta (mountain range) Tamil kattu (side of a mountain, dam, ridge, causeway) and Telugu katta and gattu (dam, embankment).
+        </p><br/>
+        </div>
+
+    <div  class="col-sm-3">
+       <img src="{% static 'gallery/bana.jpg' %}" style="height:100%; width:100%;"/>
+    </div>
+</div>
+
+<div class="row">
+    <div  class="col-sm-3">
+        <img src="{% static 'gallery/golden.jpg' %}" style="height:200px; width:100%;"/>
+    </div>
+    <div  class="col-sm-9">
+        <h4><u>Golden Temple :</u></h4>
+        <p style="text-align:justify;">The Golden Temple (also known as the Harmandir Sahib, lit. 'abode of God', Punjabi pronunciation:
+            , or the Darbār Sahib, 'exalted court', [d̪əɾᵊbaːɾᵊ saːɦ(ɪ)bᵊ]) is a gurdwara located in the city of
+            Amritsar, Punjab, India.[2][3] It is the preeminent spiritual site of Sikhism.
+
+The gurdwara is built around a man-made pool (sarovar) that was completed by the fourth Sikh Guru, Guru Ram Das, in 1577.[5][6] In 1604, Guru Arjan placed a copy of the Adi Granth in Harmandir Sahib.[2][7] The Gurdwara was repeatedly rebuilt by the Sikhs after it became a target of persecution and was destroyed several times by the Mughal and invading Afghan armies.[2][4][8] Maharaja Ranjit Singh, after founding the Sikh Empire, rebuilt it in marble and copper in 1809, and overlaid the sanctum with Gold foil in 1830. This has led to the name the Golden Temple.[9][10][11]</p>
+        </div>
+
+</div>
+
+      <div class="row">
+    <div  class="col-sm-9">
+        <h4><u>Surya Temple :</u></h4>
+              <p style="text-align:justify;">The Surya Temple or Surya Mandir (Hindi: सूर्य मंदिर, रांची), located near Bundu, is a Hindu temple complex dedicated to the solar deity, Surya.
+
+It is situated on top of a hill, on the NH-33 (Ranchi-Tata Road), approximately 40 km (25 mi) from the capital city of Jharkhand, Ranchi.[1] The temple is constructed in the form of huge chariot with elegantly designed eighteen wheels and seven naturalistic horses.[2] The temple also houses several other deities including Shiva, Parvati and Ganesha.
+
+The temple was built by Sanskriti Vihar, a charitable trust, headed by Shri Sita Ram Maroo, the Managing Director of Ranchi Express Group. The foundation stone was laid by Swami Shri Vasudevanand Saraswati on 24 October 1991 and the Prana Pratishtha was undertaken by Swami Shri Vamdev Ji Maharaj on 10 July 1994.</p><br/>
+        </div>
+    <div  class="col-sm-3">
+       <img src="{% static 'images/surya.jpg' %}" style="height:100%; width:100%;"/>
+    </div>
+</div>
+
+<!--------end--------->
+<!--------start------>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="h2 text-center pt-4"><h2 style="color:green;">Our Guider</h2></div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="row">
+                    {% if guider %}
+                    {% for x in guider %}
+                    <div class="col-sm-3">
+                        <div class="card w-100">
+                            <img src="/{{x.guiderpic}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.city}}</h5>
+                                <p class="card-text">
+                                    <b>Guider Id</b> : {{x.gid}}<br/>
+                                    <b>Guider Id Proof</b> : {{x.gidp}}<br/>
+                                    <b>Name</b> : {{x.name}}<br/>
+                                    <b>Qualification</b> : {{x.qualification}}<br/>
+                                    <b>Mobile</b> : {{x.mobile}}<br/>
+                                    <b>Address</b> : {{x.address}}<br/>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <ul class="list-group">
+                    <li class="list-group-item active bg-success h3 text-dark" aria-current="true">|| City ||</li>
+                    {% if city%}
+                    {% for x in city %}
+                    <a href="/user/guiderdetails?abc={{x.id}}" style="text-decoration:none;">
+                        <li class="list-group-item fs-5">{{x.cname}}</li>
+                    </a>
+                    {% endfor%}
+                    {% endif%}
+                    <a href="/user/guiderdetails" style="text-decoration:none;">
+                        <li class="list-group-item fs-5">All City Guider</li>
+                    </a>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+
+
+{% endblock %}
